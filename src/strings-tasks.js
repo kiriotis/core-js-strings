@@ -363,7 +363,6 @@ function isPalindrome(str) {
     .replace(/ /g, '')
     .toLowerCase();
   const str2 = str1.split('').reverse().join('').toLowerCase();
-  console.log(str1, str2, str1 === str2);
   return str1 === str2;
 }
 
@@ -379,8 +378,25 @@ function isPalindrome(str) {
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
-  throw new Error('Not implemented');
+function findLongestWord(sentence) {
+  // let counter = '';
+  // sentence.split(' ').forEach((el) => {
+  //   sentence.split(' ').forEach((podEl) => {
+  //     if (el.length > podEl.length) {
+  //       console.log(el.length, el);
+  //       console.log(podEl.length, podEl);
+  //       if (counter.length < el.length) {
+  //         counter = el;
+  //       }
+  //     }
+  //   });
+  // });
+  // return counter;
+
+  const kek = sentence.split(' ').sort((a, b) => {
+    return b.length - a.length;
+  });
+  return kek[0];
 }
 
 /**
@@ -393,8 +409,11 @@ function findLongestWord(/* sentence */) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  const lol = str.split(' ').map((el) => {
+    return el.split('').reverse().join('');
+  });
+  return lol.join(' ');
 }
 
 /**
@@ -408,8 +427,23 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  const lol = str.split(' ').map((el) => {
+    const kek = el.split('');
+
+    const mem = kek.map((podEl) => {
+      if (podEl === podEl.toLowerCase()) {
+        return podEl.toUpperCase();
+      }
+      if (podEl === podEl.toUpperCase()) {
+        return podEl.toLowerCase();
+      }
+      console.log(mem);
+      return mem;
+    });
+    return mem.join('');
+  });
+  return lol.join(' ');
 }
 
 /**
