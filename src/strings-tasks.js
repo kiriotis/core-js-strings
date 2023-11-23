@@ -438,7 +438,7 @@ function invertCase(str) {
       if (podEl === podEl.toUpperCase()) {
         return podEl.toLowerCase();
       }
-      console.log(mem);
+
       return mem;
     });
     return mem.join('');
